@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Texla Equipment Solutions</title>
+<meta name="description" content="Locally owned and operated forklift dealership in Southeast Texas. Meet the Texla Equipment Solutions team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; color: #fff; background: #0d0d1a; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+:root {
+  --dark: #1a1a2e; --darker: #0d0d1a; --gold: #E38929; --gold-hover: #f09a3a;
+  --white: #ffffff; --light-gray: #f4f4f4; --text-muted: #b0b0b0;
+  --section-dark: #12121f; --card-bg: #1e1e32; --max-width: 1280px;
+}
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.header { background: var(--darker); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; height: 72px; }
+.logo { font-size: 18px; font-weight: 800; letter-spacing: 2px; white-space: nowrap; }
+.logo span { color: var(--gold); }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav-item { position: relative; padding: 0 16px; height: 72px; display: flex; align-items: center; }
+.nav-item > a { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+.nav-item > a:hover { color: var(--gold); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.6; }
+.nav-item.active > a { color: var(--gold); }
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; min-width: 220px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 500; color: #ccc; transition: all 0.15s; }
+.dropdown a:hover { color: var(--gold); background: rgba(200,149,46,0.08); }
+.header-phones { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.header-phones a { color: var(--gold); transition: color 0.2s; }
+.header-phones a:hover { color: var(--gold-hover); }
+.header-phones .divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.mobile-toggle { display: none; background: none; color: #fff; font-size: 24px; padding: 8px; }
+
+/* HERO */
+.hero { position: relative; min-height: 400px; display: flex; align-items: center; margin-top: 72px; background: linear-gradient(135deg, #0a0a18 0%, #151528 50%, #0d0d1a 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(200,149,46,0.06) 0%, transparent 60%); opacity: 0.4; }
+.hero-inner { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: 80px 24px; width: 100%; text-align: center; }
+.hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; letter-spacing: 1px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
+
+/* STORY */
+.story-section { padding: 80px 0; background: var(--section-dark); }
+.story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.story-text h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 20px; line-height: 1.2; }
+.story-text p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+.story-text .founder { color: var(--gold); font-weight: 700; }
+.services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.services-list-item { display: flex; align-items: center; gap: 12px; background: var(--card-bg); border-radius: 8px; padding: 16px 20px; }
+.services-list-item i { color: var(--gold); font-size: 18px; }
+.services-list-item span { font-size: 14px; font-weight: 700; letter-spacing: 0.5px; }
+
+/* TEAM */
+.team-section { padding: 80px 0; background: var(--dark); }
+.section-title { font-size: 36px; font-weight: 900; letter-spacing: 2px; margin-bottom: 50px; text-align: center; }
+.section-title.light { color: #fff; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.team-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
+.team-card-avatar { height: 340px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: rgba(200,149,46,0.3); overflow: hidden; }
+.team-card-body { padding: 0 20px 24px; text-align: center; }
+.team-card-body h4 { font-size: 15px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 4px; }
+.team-card-body .role { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+/* PARTNERSHIPS */
+.partnerships { padding: 80px 0; background: var(--light-gray); color: var(--dark); }
+.partnerships-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.partnerships-inner h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 20px; }
+.partnerships-inner p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 24px; }
+.partner-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.partner-tag { display: inline-block; padding: 10px 20px; background: var(--dark); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 1px; border-radius: 6px; }
+
+/* LOCATIONS */
+.locations { padding: 80px 0; background: var(--dark); }
+.locations-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.locations-text h2 { font-size: 32px; font-weight: 900; line-height: 1.2; letter-spacing: 1px; margin-bottom: 16px; }
+.locations-text p { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
+.btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #fff; padding: 14px 32px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+.btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.locations-cards { display: flex; flex-direction: column; gap: 20px; }
+.location-card { background: var(--card-bg); border-radius: 10px; padding: 28px 24px; display: flex; gap: 18px; transition: transform 0.2s; }
+.location-card:hover { transform: translateY(-3px); }
+.location-card .pin { width: 48px; height: 48px; background: rgba(200,149,46,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--gold); flex-shrink: 0; }
+.location-card h4 { font-size: 16px; font-weight: 800; letter-spacing: 1px; margin-bottom: 6px; }
+.location-card .addr { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; line-height: 1.5; }
+.location-card .phone-link { color: var(--gold); font-size: 14px; font-weight: 700; transition: color 0.2s; }
+.location-card .phone-link:hover { color: var(--gold-hover); }
+.location-card .directions { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase; }
+.location-card .directions:hover { color: var(--gold-hover); }
+
+/* FOOTER */
+.footer { background: var(--darker); padding: 48px 0 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-size: 16px; font-weight: 800; letter-spacing: 2px; }
+.footer-logo span { color: var(--gold); }
+.footer-nav { display: flex; gap: 28px; }
+.footer-nav a { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #888; font-size: 16px; transition: all 0.2s; }
+.footer-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; color: #555; font-size: 12px; flex-wrap: wrap; gap: 12px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #555; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold); }
+
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 24px; overflow-y: auto; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: 14px 0; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-phones { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu .mobile-phones a { color: var(--gold); border: none; font-size: 16px; }
+
+@media (max-width: 900px) {
+  .nav, .header-phones { display: none; }
+  .mobile-toggle { display: block; }
+  .hero h1 { font-size: 36px; }
+  .story-inner { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .locations-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .section-title { font-size: 28px; }
+  .story-text h2 { font-size: 24px; }
+  .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .services-list { grid-template-columns: 1fr; }
+  .locations-text h2 { font-size: 24px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+/* Text Logo Styles */
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-text {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.logo-icon {
+  color: #c8952e;
+  width: 26px;
+  height: 22px;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.logo-sub {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #c8952e;
+  margin-top: 2px;
+}
+.footer-logo .logo-text {
+  font-size: 22px;
+}
+.footer-logo .logo-icon {
+  width: 20px;
+  height: 17px;
+}
+.footer-logo .logo-sub {
+  font-size: 7.5px;
+  letter-spacing: 3.5px;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 50px; filter: brightness(0) invert(1);">
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="inventory.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="inventory.html">New Equipment</a>
+          <a href="used.html">Used Equipment</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="rentals.html">Rentals</a></div>
+      <div class="nav-item"><a href="service.html">Service</a></div>
+      <div class="nav-item"><a href="parts.html">Parts</a></div>
+      <div class="nav-item active"><a href="about.html">About</a></div>
+    </nav>
+    <div class="header-phones">
+      <span>BEAUMONT</span> <a href="tel:4097841200">(409) 784-1200</a>
+      <div class="divider"></div>
+      <span>LUFKIN</span> <a href="tel:9363121200">(936) 312-1200</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="inventory.html">New Equipment</a>
+  <a href="used.html">Used Equipment</a>
+  <a href="rentals.html">Rentals</a>
+  <a href="service.html">Service</a>
+  <a href="parts.html">Parts</a>
+  <a href="about.html">About</a>
+  <div class="mobile-phones">
+    <a href="tel:4097841200"><i class="fa-solid fa-phone"></i> Beaumont: (409) 784-1200</a>
+    <a href="tel:9363121200"><i class="fa-solid fa-phone"></i> Lufkin: (936) 312-1200</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>ABOUT TEXLA</h1>
+    <p class="subtitle">Locally Owned. Proudly Serving Southeast Texas.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-inner">
+      <div class="story-text">
+        <h2>BUILT ON LOCAL ROOTS &amp; INDUSTRY EXPERTISE</h2>
+        <p>Texla Equipment Solutions was founded by <span class="founder">Jared Bishop</span>, a Beaumont native with over 25 years of experience in the industrial equipment industry. Born from a need for a locally-owned dealership that could provide prompt, personalized service, Texla has grown to become Southeast Texas's trusted source for forklift sales, rentals, service, and parts.</p>
+        <p>With two locations in Beaumont and Lufkin, we're positioned to deliver fast response times and hands-on support to businesses across the region.</p>
+      </div>
+      <div class="services-list">
+        <div class="services-list-item">
+          <i class="fa-solid fa-truck-moving"></i>
+          <span>New &amp; Used Forklifts</span>
+        </div>
+        <div class="services-list-item">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Rentals &amp; Leasing</span>
+        </div>
+        <div class="services-list-item">
+          <i class="fa-solid fa-wrench"></i>
+          <span>Service &amp; Repairs</span>
+        </div>
+        <div class="services-list-item">
+          <i class="fa-solid fa-gears"></i>
+          <span>Parts Supply</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title light">LEADERSHIP TEAM</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #0f1822;">
+          <img src="img/jb.jpg" alt="Jared Bishop" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>JARED BISHOP</h4>
+          <p class="role">President</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #18140f;">
+          <img src="img/fm.jpg" alt="Fuller McSpadden" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>FULLER MCSPADDEN</h4>
+          <p class="role">General Manager</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #0f1815;">
+          <img src="img/jr.jpg" alt="Josh Root" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>JOSH ROOT</h4>
+          <p class="role">Branch Manager</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #180f0f;">
+          <img src="img/js.jpg" alt="Jamie Saltzer" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>JAMIE SALTZER</h4>
+          <p class="role">Service Manager</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #0f0f18;">
+          <img src="img/mg.jpg" alt="Marley Guidroz" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>MARLEY GUIDROZ</h4>
+          <p class="role">Office Manager (Corporate)</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #0f1822;">
+          <img src="img/kg.jpg" alt="Kaycie Gunn" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>KAYCIE GUNN</h4>
+          <p class="role">Brand / Marketing Director</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #18140f;">
+          <img src="img/ll.jpg" alt="Linda Lavender" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>LINDA LAVENDER</h4>
+          <p class="role">Procurement</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #0f1815;">
+          <img src="img/bc.jpg" alt="Ben Curtis" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>BEN CURTIS</h4>
+          <p class="role">East Texas Sales</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-avatar" style="background: #180f0f;">
+          <img src="img/rh.jpg" alt="Robert Harwell" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+        <div class="team-card-body">
+          <h4>ROBERT HARWELL</h4>
+          <p class="role">Maintenance Technician</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section class="partnerships">
+  <div class="container">
+    <div class="partnerships-inner">
+      <h2>OUR PARTNERSHIPS</h2>
+      <p>As an authorized LiuGong dealer, our equipment features world-class components from industry-leading manufacturers, ensuring reliability, performance, and long-term value for our customers.</p>
+      <div class="partner-tags">
+        <span class="partner-tag">LiuGong</span>
+        <span class="partner-tag">Kubota Engines</span>
+        <span class="partner-tag">Cummins Engines</span>
+        <span class="partner-tag">ZF Transmissions</span>
+        <span class="partner-tag">Kessler Drive Axles</span>
+        <span class="partner-tag">Curtis Electronics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations">
+  <div class="container">
+    <div class="locations-inner">
+      <div class="locations-text">
+        <h2>TWO LOCATIONS.<br>BETTER COVERAGE.<br>STRONGER SUPPORT.</h2>
+        <p>Proudly serving Southeast Texas with local inventory, expert service, and fast response times.</p>
+        <a href="mailto:sales@texlaequipment.com" class="btn-gold">CONTACT US <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="locations-cards">
+        <div class="location-card">
+          <div class="pin"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4>BEAUMONT</h4>
+            <p class="addr">5685 Industrial Rd<br>Beaumont, TX 77705</p>
+            <a href="tel:4097841200" class="phone-link"><i class="fa-solid fa-phone"></i> (409) 784-1200</a><br>
+            <a href="https://maps.app.goo.gl/XA8PybxZzjWoSfFJ9" target="_blank" class="directions"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+          </div>
+        </div>
+        <div class="location-card">
+          <div class="pin"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4>LUFKIN</h4>
+            <p class="addr">3103 East Denman Ave<br>Lufkin, TX 75901</p>
+            <a href="tel:9363121200" class="phone-link"><i class="fa-solid fa-phone"></i> (936) 312-1200</a><br>
+            <a href="https://maps.app.goo.gl/EQezsmrVzsdFFa1JA" target="_blank" class="directions"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
+      </div>
+      <nav class="footer-nav">
+        <a href="inventory.html">Equipment</a>
+        <a href="rentals.html">Rentals</a>
+        <a href="service.html">Service</a>
+        <a href="parts.html">Parts</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/texlaequipment" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/texlaequipment/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
+        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('open');
+  icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+window.addEventListener('scroll', () => {
+  document.querySelector('.header').style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,0.3)' : 'none';
+});
+</script>
+</body>
+</html>

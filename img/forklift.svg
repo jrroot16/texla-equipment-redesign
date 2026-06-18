@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+  <!-- Mast (two vertical rails, slightly angled) -->
+  <polygon points="72,12 75,12 77,68 74,68"/>
+  <polygon points="80,12 83,12 85,68 82,68"/>
+  <!-- Mast cross-bars -->
+  <rect x="74" y="20" width="9" height="3" rx="0.5"/>
+  <rect x="75" y="35" width="8" height="3" rx="0.5"/>
+  <!-- Fork carriage -->
+  <rect x="73" y="55" width="13" height="5" rx="1"/>
+  <!-- Forks (two horizontal prongs) -->
+  <rect x="85" y="56" width="15" height="3" rx="0.5"/>
+  <rect x="85" y="63" width="15" height="3" rx="0.5"/>
+  <!-- Fork vertical connector -->
+  <rect x="85" y="56" width="3" height="10"/>
+  <!-- Main body / chassis -->
+  <path d="M8,45 L8,72 L68,72 L68,45 L55,45 L55,30 L35,30 L30,45 Z" rx="2"/>
+  <!-- Cab opening (cutout) -->
+  <path d="M38,33 L53,33 L53,45 L33,45 Z" fill="white"/>
+  <!-- Seat -->
+  <rect x="36" y="40" width="8" height="5" rx="1" fill="white"/>
+  <rect x="34" y="36" width="3" height="9" rx="1" fill="white"/>
+  <!-- Steering column -->
+  <line x1="48" y1="38" x2="52" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- Steering wheel -->
+  <circle cx="47" cy="37" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <!-- Overhead guard (roof) -->
+  <rect x="28" y="26" width="42" height="3" rx="1"/>
+  <!-- Rear guard post -->
+  <rect x="29" y="26" width="3" height="19" rx="0.5"/>
+  <!-- Engine hood -->
+  <path d="M8,45 L28,45 L28,72 L8,72 Z"/>
+  <!-- Hood lines -->
+  <line x1="12" y1="48" x2="12" y2="68" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <line x1="18" y1="48" x2="18" y2="68" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <!-- Exhaust pipe -->
+  <rect x="12" y="38" width="3" height="9" rx="1"/>
+  <rect x="11" y="36" width="5" height="3" rx="1"/>
+  <!-- Rear wheel -->
+  <circle cx="22" cy="78" r="14"/>
+  <circle cx="22" cy="78" r="9" fill="white"/>
+  <circle cx="22" cy="78" r="5"/>
+  <circle cx="22" cy="78" r="2" fill="white"/>
+  <!-- Front wheel (smaller) -->
+  <circle cx="58" cy="78" r="11"/>
+  <circle cx="58" cy="78" r="7" fill="white"/>
+  <circle cx="58" cy="78" r="4"/>
+  <circle cx="58" cy="78" r="1.5" fill="white"/>
+  <!-- Hydraulic hose from body to mast -->
+  <path d="M68,50 Q72,48 74,40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+</svg>

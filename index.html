@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texla Equipment Solutions | Southeast Texas Forklift Sales, Service & Rentals</title>
+<meta name="description" content="Texla Equipment Solutions - forklift sales, rentals, service and parts in Beaumont and Lufkin, Texas. Same-day service response.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background: #0d0d1a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --dark: #1a1a2e;
+  --darker: #0d0d1a;
+  --gold: #E38929;
+  --gold-hover: #f09a3a;
+  --white: #ffffff;
+  --light-gray: #f4f4f4;
+  --mid-gray: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --section-dark: #12121f;
+  --card-bg: #1e1e32;
+  --max-width: 1280px;
+}
+
+/* ===== UTILITY ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--darker);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.logo span { color: var(--gold); }
+
+.nav { display: flex; align-items: center; gap: 0; }
+.nav-item {
+  position: relative;
+  padding: 0 16px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+.nav-item > a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-item > a:hover { color: var(--gold); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.6; }
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  min-width: 220px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ccc;
+  transition: all 0.15s;
+}
+.dropdown a:hover {
+  color: var(--gold);
+  background: rgba(200,149,46,0.08);
+}
+
+.header-phones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.header-phones a {
+  color: var(--gold);
+  transition: color 0.2s;
+}
+.header-phones a:hover { color: var(--gold-hover); }
+.header-phones .divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.15);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  margin-top: 72px;
+  background: linear-gradient(135deg, #0a0a18 0%, #151528 50%, #0d0d1a 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(200,149,46,0.06) 0%, transparent 60%),
+    url('img/building.jpg') center/cover no-repeat;
+  opacity: 0.35;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+  width: 100%;
+}
+.hero-content { max-width: 620px; }
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.hero .subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.hero .sub-detail {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: #fff; transform: translateY(-1px); }
+
+/* Financing Popup */
+.financing-popup {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 380px;
+  background: var(--dark);
+  border: 1px solid rgba(200,149,46,0.3);
+  border-radius: 12px;
+  padding: 32px 28px 24px;
+  z-index: 999;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: slideUp 0.5s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.financing-popup .close-popup {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  color: #888;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+.financing-popup .close-popup:hover { color: #fff; }
+.financing-popup h3 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.financing-popup .rate-highlight {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.financing-popup input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+.financing-popup input::placeholder { color: #666; }
+.financing-popup input:focus { outline: none; border-color: var(--gold); }
+.financing-popup .btn-gold {
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+  padding: 13px;
+  font-size: 13px;
+}
+.financing-popup .dismiss {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.financing-popup .dismiss:hover { color: #999; }
+.financing-popup.hidden { display: none; }
+
+/* ===== SERVICES CARDS ===== */
+.services {
+  padding: 80px 0;
+  background: var(--section-dark);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.service-card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+}
+.service-card-img {
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.service-card-img.sales-bg {
+  background: linear-gradient(135deg, #1c2a3a 0%, #0f1a28 100%);
+}
+.service-card-img.rentals-bg {
+  background: linear-gradient(135deg, #2a1c1c 0%, #1a0f0f 100%);
+}
+.service-card-img.repair-bg {
+  background: linear-gradient(135deg, #1c2a1c 0%, #0f1a0f 100%);
+}
+.service-card-img .card-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(200,149,46,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--gold);
+}
+.service-card-body {
+  padding: 28px 24px;
+}
+.service-card-body h3 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.service-card-body p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.service-card-body .card-link {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.service-card-body .card-link:hover { color: var(--gold-hover); }
+
+/* ===== WHY TEXLA ===== */
+.why-texla {
+  padding: 80px 0;
+  background: var(--light-gray);
+  color: #1a1a2e;
+  text-align: center;
+}
+.section-title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+.section-title.light { color: #fff; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+.why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 12px;
+}
+.why-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.why-item h4 {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.why-item p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ===== FEATURED EQUIPMENT ===== */
+.featured {
+  padding: 80px 0;
+  background: var(--darker);
+}
+.featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.featured-header .view-all {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.featured-header .view-all:hover { color: var(--gold-hover); }
+
+.carousel-wrapper {
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.equip-card {
+  min-width: calc((100% - 96px) / 5);
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.equip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+}
+.equip-card-img {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: rgba(200,149,46,0.3);
+}
+.equip-card-img:nth-child(1) { background: linear-gradient(135deg, #1a2030, #0f1520); }
+.equip-card-body {
+  padding: 18px 16px;
+}
+.equip-card-body .brand {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.equip-card-body h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.equip-card-body .card-link {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.equip-card-body .card-link:hover { color: var(--gold-hover); }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 5;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.carousel-btn:hover { background: var(--gold-hover); }
+.carousel-btn.prev { left: -22px; }
+.carousel-btn.next { right: -22px; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  padding: 80px 0;
+  background: var(--light-gray);
+  color: var(--dark);
+  text-align: center;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 36px 32px;
+  text-align: left;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  position: relative;
+}
+.testimonial-card .quote-mark {
+  font-size: 48px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-family: Georgia, serif;
+}
+.testimonial-card blockquote {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.testimonial-company {
+  width: 60px;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 800;
+  color: #999;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.testimonial-info .name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0.5px;
+}
+.testimonial-info .role {
+  font-size: 12px;
+  color: #888;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carousel-dots .dot.active { background: var(--gold); }
+
+/* ===== LOCATIONS ===== */
+.locations {
+  padding: 80px 0;
+  background: var(--dark);
+}
+.locations-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.locations-text h2 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.locations-text p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.locations-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.location-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  gap: 18px;
+  transition: transform 0.2s;
+}
+.location-card:hover { transform: translateY(-3px); }
+.location-card .pin {
+  width: 48px;
+  height: 48px;
+  background: rgba(200,149,46,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.location-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.location-card .addr {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.location-card .phone-link {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.location-card .phone-link:hover { color: var(--gold-hover); }
+.location-card .directions {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.location-card .directions:hover { color: var(--gold-hover); }
+
+/* ===== CTA ===== */
+.cta {
+  padding: 64px 0;
+  background: linear-gradient(135deg, var(--gold) 0%, #a67a20 100%);
+  text-align: center;
+}
+.cta h2 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.cta .cta-sub {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+.cta-phones {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.cta-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.cta-phone-btn:hover { background: rgba(255,255,255,0.25); }
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--dark);
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--darker);
+  padding: 48px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.footer-logo span { color: var(--gold); }
+.footer-nav {
+  display: flex;
+  gap: 28px;
+}
+.footer-nav a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--gold); }
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.footer-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  color: #555;
+  font-size: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+.footer-legal a { color: #555; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .equip-card { min-width: calc((100% - 48px) / 3); }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .nav, .header-phones { display: none; }
+  .mobile-toggle { display: block; }
+  .hero h1 { font-size: 36px; }
+  .services-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .locations-inner { grid-template-columns: 1fr; }
+  .equip-card { min-width: calc((100% - 24px) / 2); }
+  .financing-popup { display: none !important; }
+  .featured-header { flex-direction: column; gap: 12px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .hero { min-height: 540px; }
+  .hero h1 { font-size: 28px; }
+  .hero .subtitle { font-size: 16px; }
+  .section-title { font-size: 28px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .equip-card { min-width: calc(100% - 0px); }
+  .locations-text h2 { font-size: 24px; }
+  .cta h2 { font-size: 24px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--darker);
+  z-index: 999;
+  padding: 24px;
+  overflow-y: auto;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ccc;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-phones {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-menu .mobile-phones a {
+  color: var(--gold);
+  border: none;
+  font-size: 16px;
+}
+.footer-logo .logo-text {
+  font-size: 22px;
+}
+.footer-logo .logo-icon {
+  width: 20px;
+  height: 17px;
+}
+.footer-logo .logo-sub {
+  font-size: 7.5px;
+  letter-spacing: 3.5px;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 50px; height: 50px; display: block; filter: brightness(0) invert(1);">
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="inventory.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="inventory.html">New Equipment</a>
+          <a href="used.html">Used Equipment</a>
+          <a href="inventory.html">View All Inventory</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="rentals.html">Rentals</a></div>
+      <div class="nav-item"><a href="service.html">Service</a></div>
+      <div class="nav-item"><a href="parts.html">Parts</a></div>
+      <div class="nav-item">
+        <a href="about.html">Locations <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="https://maps.app.goo.gl/XA8PybxZzjWoSfFJ9" target="_blank">Beaumont</a>
+          <a href="https://maps.app.goo.gl/EQezsmrVzsdFFa1JA" target="_blank">Lufkin</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html">About <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="mailto:sales@texlaequipment.com">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-phones">
+      <span>BEAUMONT</span> <a href="tel:4097841200">(409) 784-1200</a>
+      <div class="divider"></div>
+      <span>LUFKIN</span> <a href="tel:9363121200">(936) 312-1200</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="inventory.html">Equipment</a>
+  <a href="rentals.html">Rentals</a>
+  <a href="service.html">Service</a>
+  <a href="parts.html">Parts</a>
+  <a href="about.html">Locations</a>
+  <a href="about.html">About</a>
+  <div class="mobile-phones">
+    <a href="tel:4097841200"><i class="fa-solid fa-phone"></i> Beaumont: (409) 784-1200</a>
+    <a href="tel:9363121200"><i class="fa-solid fa-phone"></i> Lufkin: (936) 312-1200</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>SOUTHEAST TEXAS FORKLIFT SOLUTIONS</h1>
+      <p class="subtitle">Sales. Service. Rentals. Parts.</p>
+      <p class="sub-detail">Two locations. Local technicians. Same-day response.</p>
+      <div class="hero-buttons">
+        <a href="service.html" class="btn-gold">REQUEST SERVICE</a>
+        <a href="inventory.html" class="btn-outline">BROWSE EQUIPMENT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Financing Popup -->
+<div class="financing-popup" id="financingPopup">
+  <button class="close-popup" onclick="closeFinancing()" aria-label="Close">&times;</button>
+  <h3>NEED FINANCING?</h3>
+  <p class="rate-highlight">Get rates starting at 0%</p>
+  <form id="financingForm" onsubmit="submitFinancing(event)">
+    <input type="text" placeholder="Full Name" required>
+    <input type="text" placeholder="Company Name">
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="email" placeholder="Email Address" required>
+    <button type="submit" class="btn-gold">REQUEST FINANCING INFO</button>
+  </form>
+  <span class="dismiss" onclick="closeFinancing()">No Thanks, I'll Pass</span>
+</div>
+
+<!-- THREE CARDS -->
+<section class="services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-img sales-bg">
+          <img src="img/building.jpg" alt="Equipment Sales" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="service-card-body">
+          <h3>EQUIPMENT SALES</h3>
+          <p>New and used forklifts from trusted brands.</p>
+          <a href="inventory.html" class="card-link">VIEW INVENTORY <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img rentals-bg">
+          <img src="img/P1013433.jpg" alt="Forklift Rentals" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="service-card-body">
+          <h3>FORKLIFT RENTALS</h3>
+          <p>Short-term and long-term rentals to fit your needs.</p>
+          <a href="rentals.html" class="card-link">VIEW RENTALS <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img repair-bg">
+          <img src="img/mechanic.jpg" alt="Service & Repair" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="service-card-body">
+          <h3>SERVICE & REPAIR</h3>
+          <p>Factory-trained technicians. On-site or in-shop service.</p>
+          <a href="service.html" class="card-link">LEARN MORE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TEXLA -->
+<section class="why-texla">
+  <div class="container">
+    <h2 class="section-title">WHY TEXLA?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h4>TWO CONVENIENT LOCATIONS</h4>
+        <p>Beaumont &amp; Lufkin</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fa-solid fa-user-gear"></i></div>
+        <h4>FACTORY-TRAINED TECHNICIANS</h4>
+        <p>Expert service you can count on</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fa-solid fa-clock"></i></div>
+        <h4>SAME-DAY SERVICE RESPONSE</h4>
+        <p>Minimize downtime and keep moving</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fa-solid fa-gears"></i></div>
+        <h4>OEM & AFTERMARKET PARTS</h4>
+        <p>Huge inventory. Fast shipping.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h4>LOCAL INVENTORY READY TO GO</h4>
+        <p>In-stock and job-site ready</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED EQUIPMENT -->
+<section class="featured">
+  <div class="container">
+    <div class="featured-header">
+      <h2 class="section-title light">FEATURED EQUIPMENT</h2>
+      <a href="inventory.html" class="view-all">VIEW ALL INVENTORY <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="scrollCarousel(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="carousel-track" id="equipCarousel">
+        <div class="equip-card">
+          <div class="equip-card-img" style="background: #0f1822;">
+            <img src="img/products/card-forklift-clg2025a-sc-v2.jpg" alt="CPD25 Electric Forklift" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="equip-card-body">
+            <p class="brand">LIUGONG</p>
+            <h4>CPD25 - 4,500 LB ELECTRIC FORKLIFT</h4>
+            <a href="inventory.html" class="card-link">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-img" style="background: #18140f;">
+            <img src="img/products/texla-coming-soon.jpg" alt="CLG2032H Forklift" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="equip-card-body">
+            <p class="brand">LIUGONG</p>
+            <h4>CLG2032H - 8,000 LB PNEUMATIC FORKLIFT</h4>
+            <a href="inventory.html" class="card-link">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-img" style="background: #0f1815;">
+            <img src="img/products/card-forklift-clg2050h-l-v2.jpg" alt="CLG2050H Forklift" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="equip-card-body">
+            <p class="brand">LIUGONG</p>
+            <h4>CLG2050H - 10,000 LB PNEUMATIC FORKLIFT</h4>
+            <a href="inventory.html" class="card-link">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-img" style="background: #180f0f;">
+            <img src="img/products/card-forklift-clg2050h-l-v2.jpg" alt="CPCD50 Diesel Forklift" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="equip-card-body">
+            <p class="brand">LIUGONG</p>
+            <h4>CPCD50 - 10,000 LB DIESEL FORKLIFT</h4>
+            <a href="inventory.html" class="card-link">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-card-img" style="background: #0f0f18;">
+            <img src="img/products/texla-coming-soon.jpg" alt="9035E Mini Excavator" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="equip-card-body">
+            <p class="brand">LIUGONG</p>
+            <h4>9035E - MINI EXCAVATOR</h4>
+            <a href="inventory.html" class="card-link">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel(1)" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+    <div class="testimonials-grid" id="testimonialGrid">
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <blockquote>Texla Equipment has been a huge asset to our operation. Their response time is unmatched and their technicians know their stuff.</blockquote>
+        <div class="testimonial-footer">
+          <div class="testimonial-company">TRINITY<br>INDUSTRIES</div>
+          <div class="testimonial-info">
+            <p class="name">JASON W.</p>
+            <p class="role">Maintenance Manager</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">&ldquo;</div>
+        <blockquote>We've rented and purchased equipment from Texla for years. Always reliable, always fair, and always local.</blockquote>
+        <div class="testimonial-footer">
+          <div class="testimonial-company">SETEX</div>
+          <div class="testimonial-info">
+            <p class="name">BRAD C.</p>
+            <p class="role">Operations Director</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations">
+  <div class="container">
+    <div class="locations-inner">
+      <div class="locations-text">
+        <h2>TWO LOCATIONS.<br>BETTER COVERAGE.<br>STRONGER SUPPORT.</h2>
+        <p>Proudly serving Southeast Texas with local inventory, expert service, and fast response times.</p>
+        <a href="about.html" class="btn-gold">VIEW LOCATIONS <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="locations-cards">
+        <div class="location-card">
+          <div class="pin"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4>BEAUMONT</h4>
+            <p class="addr">5685 Industrial Rd<br>Beaumont, TX 77705</p>
+            <a href="tel:4097841200" class="phone-link"><i class="fa-solid fa-phone"></i> (409) 784-1200</a><br>
+            <a href="https://maps.app.goo.gl/XA8PybxZzjWoSfFJ9" target="_blank" class="directions"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+          </div>
+        </div>
+        <div class="location-card">
+          <div class="pin"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h4>LUFKIN</h4>
+            <p class="addr">3103 East Denman Ave<br>Lufkin, TX 75901</p>
+            <a href="tel:9363121200" class="phone-link"><i class="fa-solid fa-phone"></i> (936) 312-1200</a><br>
+            <a href="https://maps.app.goo.gl/EQezsmrVzsdFFa1JA" target="_blank" class="directions"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>NEED EQUIPMENT FAST?</h2>
+    <p class="cta-sub">Our team is ready to help.</p>
+    <div class="cta-phones">
+      <a href="tel:4097841200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (409) 784-1200</a>
+      <a href="tel:9363121200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (936) 312-1200</a>
+    </div>
+    <a href="mailto:sales@texlaequipment.com" class="btn-white">CONTACT TEXLA</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
+      </div>
+      <nav class="footer-nav">
+        <a href="inventory.html">Equipment</a>
+        <a href="rentals.html">Rentals</a>
+        <a href="service.html">Service</a>
+        <a href="parts.html">Parts</a>
+        <a href="about.html">Locations</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/texlaequipment" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/texlaequipment/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
+        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('open');
+  icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+
+// Financing popup
+function closeFinancing() {
+  document.getElementById('financingPopup').classList.add('hidden');
+  sessionStorage.setItem('financingDismissed', '1');
+}
+function submitFinancing(e) {
+  e.preventDefault();
+  window.open('https://apply.peacsolutions.com/auth/EF?partnerid=4097810KQMFDYA1', '_blank');
+  closeFinancing();
+}
+if (sessionStorage.getItem('financingDismissed')) {
+  document.getElementById('financingPopup').classList.add('hidden');
+}
+
+// Equipment carousel
+function scrollCarousel(dir) {
+  const track = document.getElementById('equipCarousel');
+  const card = track.querySelector('.equip-card');
+  const scrollAmount = (card.offsetWidth + 24) * dir;
+  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+}
+
+// Testimonial dots
+document.querySelectorAll('.carousel-dots .dot').forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    document.querySelectorAll('.carousel-dots .dot').forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// Header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  const scroll = window.scrollY;
+  if (scroll > 100) {
+    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+  lastScroll = scroll;
+});
+</script>
+</body>
+</html>

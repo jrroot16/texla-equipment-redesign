@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forklift Rentals | Texla Equipment Solutions</title>
+<meta name="description" content="Flexible forklift rental solutions in Southeast Texas. Short-term, long-term, and seasonal rentals from Texla Equipment Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; color: #fff; background: #0d0d1a; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+:root {
+  --dark: #1a1a2e; --darker: #0d0d1a; --gold: #E38929; --gold-hover: #f09a3a;
+  --white: #ffffff; --light-gray: #f4f4f4; --text-muted: #b0b0b0;
+  --section-dark: #12121f; --card-bg: #1e1e32; --max-width: 1280px;
+}
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+.header { background: var(--darker); border-bottom: 1px solid rgba(255,255,255,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; height: 72px; }
+.logo { font-size: 18px; font-weight: 800; letter-spacing: 2px; white-space: nowrap; }
+.logo span { color: var(--gold); }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav-item { position: relative; padding: 0 16px; height: 72px; display: flex; align-items: center; }
+.nav-item > a { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+.nav-item > a:hover { color: var(--gold); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.6; }
+.nav-item.active > a { color: var(--gold); }
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; min-width: 220px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 500; color: #ccc; transition: all 0.15s; }
+.dropdown a:hover { color: var(--gold); background: rgba(200,149,46,0.08); }
+.header-phones { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.header-phones a { color: var(--gold); transition: color 0.2s; }
+.header-phones a:hover { color: var(--gold-hover); }
+.header-phones .divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.mobile-toggle { display: none; background: none; color: #fff; font-size: 24px; padding: 8px; }
+
+/* HERO */
+.hero { position: relative; min-height: 400px; display: flex; align-items: center; margin-top: 72px; background: linear-gradient(135deg, #0a0a18 0%, #151528 50%, #0d0d1a 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(200,149,46,0.06) 0%, transparent 60%), url('img/P1013433.jpg') center/cover no-repeat; opacity: 0.35; }
+.hero-inner { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: 80px 24px; width: 100%; text-align: center; }
+.hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; letter-spacing: 1px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
+
+/* WHY RENT */
+.why-rent { padding: 80px 0; background: var(--section-dark); }
+.section-title { font-size: 36px; font-weight: 900; letter-spacing: 2px; margin-bottom: 50px; text-align: center; }
+.section-title.light { color: #fff; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.benefit-card { background: var(--card-bg); border-radius: 10px; padding: 40px 28px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.benefit-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+.benefit-icon { width: 72px; height: 72px; background: rgba(200,149,46,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--gold); margin: 0 auto 24px; }
+.benefit-card h3 { font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.benefit-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+
+/* RENTAL OPTIONS */
+.rental-options { padding: 80px 0; background: var(--dark); }
+.options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 40px; }
+.option-card { background: var(--card-bg); border-radius: 10px; padding: 36px 28px; border-top: 3px solid var(--gold); text-align: center; transition: transform 0.3s; }
+.option-card:hover { transform: translateY(-4px); }
+.option-card h3 { font-size: 18px; font-weight: 800; letter-spacing: 1px; margin-bottom: 12px; }
+.option-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+.rental-desc { max-width: 700px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+/* CTA */
+.cta { padding: 64px 0; background: linear-gradient(135deg, var(--gold) 0%, #a67a20 100%); text-align: center; }
+.cta h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+.cta .cta-sub { font-size: 16px; opacity: 0.9; margin-bottom: 28px; }
+.cta-phones { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.cta-phone-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); color: #fff; padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 4px; transition: background 0.2s; }
+.cta-phone-btn:hover { background: rgba(255,255,255,0.25); }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--dark); padding: 14px 36px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+.btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+/* FOOTER */
+.footer { background: var(--darker); padding: 48px 0 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-size: 16px; font-weight: 800; letter-spacing: 2px; }
+.footer-logo span { color: var(--gold); }
+.footer-nav { display: flex; gap: 28px; }
+.footer-nav a { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #888; font-size: 16px; transition: all 0.2s; }
+.footer-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; color: #555; font-size: 12px; flex-wrap: wrap; gap: 12px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #555; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold); }
+
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 24px; overflow-y: auto; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: 14px 0; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-phones { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu .mobile-phones a { color: var(--gold); border: none; font-size: 16px; }
+
+@media (max-width: 900px) {
+  .nav, .header-phones { display: none; }
+  .mobile-toggle { display: block; }
+  .hero h1 { font-size: 36px; }
+  .benefits-grid, .options-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .options-grid { margin-bottom: 40px; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .section-title { font-size: 28px; }
+  .cta h2 { font-size: 24px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+/* Text Logo Styles */
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-text {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.logo-icon {
+  color: #c8952e;
+  width: 26px;
+  height: 22px;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.logo-sub {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #c8952e;
+  margin-top: 2px;
+}
+.footer-logo .logo-text {
+  font-size: 22px;
+}
+.footer-logo .logo-icon {
+  width: 20px;
+  height: 17px;
+}
+.footer-logo .logo-sub {
+  font-size: 7.5px;
+  letter-spacing: 3.5px;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 50px; filter: brightness(0) invert(1);">
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="inventory.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="inventory.html">New Equipment</a>
+          <a href="used.html">Used Equipment</a>
+        </div>
+      </div>
+      <div class="nav-item active"><a href="rentals.html">Rentals</a></div>
+      <div class="nav-item"><a href="service.html">Service</a></div>
+      <div class="nav-item"><a href="parts.html">Parts</a></div>
+      <div class="nav-item"><a href="about.html">About</a></div>
+    </nav>
+    <div class="header-phones">
+      <span>BEAUMONT</span> <a href="tel:4097841200">(409) 784-1200</a>
+      <div class="divider"></div>
+      <span>LUFKIN</span> <a href="tel:9363121200">(936) 312-1200</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="inventory.html">New Equipment</a>
+  <a href="used.html">Used Equipment</a>
+  <a href="rentals.html">Rentals</a>
+  <a href="service.html">Service</a>
+  <a href="parts.html">Parts</a>
+  <a href="about.html">About</a>
+  <div class="mobile-phones">
+    <a href="tel:4097841200"><i class="fa-solid fa-phone"></i> Beaumont: (409) 784-1200</a>
+    <a href="tel:9363121200"><i class="fa-solid fa-phone"></i> Lufkin: (936) 312-1200</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>FORKLIFT RENTALS</h1>
+    <p class="subtitle">Flexible Rental Solutions for Every Job</p>
+  </div>
+</section>
+
+<section class="why-rent">
+  <div class="container">
+    <h2 class="section-title light">WHY RENT?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>NO LONG-TERM COMMITMENT</h3>
+        <p>Rent only when you need it. No long-term financial obligations or equipment ownership overhead.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>NO MAINTENANCE COSTS</h3>
+        <p>We maintain every rental in our fleet so you never have to worry about repair bills or unexpected downtime.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-truck-moving"></i></div>
+        <h3>RIGHT EQUIPMENT, RIGHT TIME</h3>
+        <p>Access various types and sizes of equipment to match the specific demands of each job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rental-options">
+  <div class="container">
+    <h2 class="section-title light">RENTAL OPTIONS</h2>
+    <div class="options-grid">
+      <div class="option-card">
+        <h3>SHORT-TERM</h3>
+        <p>Daily and weekly rentals for temporary projects, peak seasons, or emergency equipment needs.</p>
+      </div>
+      <div class="option-card">
+        <h3>LONG-TERM</h3>
+        <p>Monthly and multi-month rentals with competitive rates for ongoing operational requirements.</p>
+      </div>
+      <div class="option-card">
+        <h3>SEASONAL</h3>
+        <p>Flexible seasonal contracts for businesses with cyclical demand or project-based timelines.</p>
+      </div>
+    </div>
+    <p class="rental-desc">Renting a forklift can be a smarter choice than buying one, especially for businesses with short-term or seasonal needs. Our rental fleet is well-maintained and available for immediate deployment across Southeast Texas.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>GET A RENTAL QUOTE</h2>
+    <p class="cta-sub">Tell us what you need and we'll put together a competitive rental package.</p>
+    <div class="cta-phones">
+      <a href="tel:4097841200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (409) 784-1200</a>
+      <a href="tel:9363121200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (936) 312-1200</a>
+    </div>
+    <a href="mailto:sales@texlaequipment.com?subject=Rental Quote Request" class="btn-white">REQUEST A RENTAL</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
+      </div>
+      <nav class="footer-nav">
+        <a href="inventory.html">Equipment</a>
+        <a href="rentals.html">Rentals</a>
+        <a href="service.html">Service</a>
+        <a href="parts.html">Parts</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/texlaequipment" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/texlaequipment/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
+        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('open');
+  icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+window.addEventListener('scroll', () => {
+  document.querySelector('.header').style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,0.3)' : 'none';
+});
+</script>
+</body>
+</html>
