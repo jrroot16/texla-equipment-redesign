@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epic E20FX | Texla Equipment Solutions</title>
+<meta name="description" content="Epic E20FX 2-passenger luxury electric golf cart. 6.3kW AC motor, Eco Lithium battery, wireless charging, backup camera. Authorized Icon EV dealer in Southeast Texas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background: #0d0d1a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --dark: #1a1a2e;
+  --darker: #0d0d1a;
+  --gold: #E38929;
+  --gold-hover: #f09a3a;
+  --white: #ffffff;
+  --light-gray: #f4f4f4;
+  --mid-gray: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --section-dark: #12121f;
+  --card-bg: #1e1e32;
+  --max-width: 1280px;
+}
+
+/* ===== UTILITY ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--darker);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.logo span { color: var(--gold); }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav-item { position: relative; padding: 0 16px; height: 72px; display: flex; align-items: center; }
+.nav-item > a { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+.nav-item > a:hover { color: var(--gold); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.6; }
+.nav-item.active > a { color: var(--gold); }
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; min-width: 220px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 500; color: #ccc; transition: all 0.15s; }
+.dropdown a:hover { color: var(--gold); background: rgba(200,149,46,0.08); }
+.dropdown .sub-group { position: relative; }
+.dropdown .sub-group > a::after { content: '\203A'; float: right; opacity: 0.5; }
+.dropdown .sub-dropdown {
+  position: absolute; left: 100%; top: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px; min-width: 200px; padding: 8px 0; opacity: 0; visibility: hidden;
+  transform: translateX(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.dropdown .sub-group:hover .sub-dropdown { opacity: 1; visibility: visible; transform: translateX(0); }
+.header-phones { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.header-phones a { color: var(--gold); transition: color 0.2s; }
+.header-phones a:hover { color: var(--gold-hover); }
+.header-phones .divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.mobile-toggle { display: none; background: none; color: #fff; font-size: 24px; padding: 8px; }
+
+/* ===== HERO WITH COLOR PICKER ===== */
+.hero { margin-top: 72px; background: var(--section-dark); padding: 40px 0 60px; }
+.hero-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.hero .back-link { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; transition: opacity 0.2s; width: fit-content; margin-left: -24px; }
+.hero .back-link:hover { opacity: 0.8; }
+.section-title { font-size: 36px; font-weight: 900; letter-spacing: 2px; margin-bottom: 50px; text-align: center; }
+.section-title.light { color: #fff; }
+.hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.color-showcase { }
+.color-showcase-img { position: relative; background: var(--card-bg); border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+.color-showcase-img img { width: 100%; height: auto; object-fit: contain; transition: opacity 0.3s; background: var(--card-bg); }
+.color-showcase-label { text-align: center; font-size: 16px; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
+.color-swatches { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.color-swatch { width: 48px; height: 48px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: all 0.2s; position: relative; }
+.color-swatch:hover { transform: scale(1.15); }
+.color-swatch.active { border-color: var(--gold); box-shadow: 0 0 12px rgba(227,137,41,0.4); }
+.color-swatch-name { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); font-size: 10px; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 0.2s; }
+.color-swatch:hover .color-swatch-name { opacity: 1; }
+.hero-info { text-align: left; padding-top: 20px; }
+.hero-info h1 { font-size: 42px; font-weight: 900; letter-spacing: 1px; margin-bottom: 24px; }
+.hero-info p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+.hero-info .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #fff; padding: 14px 32px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; margin-top: 12px; }
+.hero-info .btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); }
+
+/* ===== SPECS ===== */
+.specs-section { padding: 80px 0; background: var(--dark); }
+.specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; max-width: 800px; margin: 0 auto; }
+.spec-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
+.spec-row .label { color: var(--text-muted); font-weight: 500; }
+.spec-row .value { font-weight: 700; text-align: right; }
+
+/* ===== CTA ===== */
+.cta { padding: 64px 0; background: linear-gradient(135deg, var(--gold) 0%, #a67a20 100%); text-align: center; }
+.cta h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+.cta .cta-sub { font-size: 16px; opacity: 0.9; margin-bottom: 28px; }
+.cta-phones { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.cta-phone-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); color: #fff; padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 4px; transition: background 0.2s; }
+.cta-phone-btn:hover { background: rgba(255,255,255,0.25); }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--dark); padding: 14px 36px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+.btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--darker); padding: 48px 0 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 20px; }
+.footer-nav { display: flex; gap: 28px; }
+.footer-nav a { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #888; font-size: 16px; transition: all 0.2s; }
+.footer-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; color: #555; font-size: 12px; flex-wrap: wrap; gap: 12px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #555; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold); }
+
+/* ===== MOBILE ===== */
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 24px; overflow-y: auto; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: 14px 0; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-phones { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu .mobile-phones a { color: var(--gold); border: none; font-size: 16px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav, .header-phones { display: none; }
+  .mobile-toggle { display: block; }
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-info { text-align: center; }
+  .specs-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-info h1 { font-size: 28px; }
+  .cta h2 { font-size: 24px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 50px; filter: brightness(0) invert(1);">
+    </a>
+    <nav class="nav">
+      <div class="nav-item active">
+        <a href="equipment.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <div class="sub-group">
+            <a href="inventory.html">Forklifts</a>
+            <div class="sub-dropdown">
+              <a href="inventory.html">New Forklifts</a>
+              <a href="used.html">Used Forklifts</a>
+            </div>
+          </div>
+          <div class="sub-group">
+            <a href="golf-carts.html">Golf Carts</a>
+            <div class="sub-dropdown">
+              <a href="golf-carts.html">Icon Golf Carts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="rentals.html">Rentals</a></div>
+      <div class="nav-item"><a href="service.html">Service</a></div>
+      <div class="nav-item"><a href="parts.html">Parts</a></div>
+      <div class="nav-item"><a href="about.html">About</a></div>
+    </nav>
+    <div class="header-phones">
+      <span>BEAUMONT</span> <a href="tel:4097841200">(409) 784-1200</a>
+      <div class="divider"></div>
+      <span>LUFKIN</span> <a href="tel:9363121200">(936) 312-1200</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="inventory.html">Forklifts</a>
+  <a href="golf-carts.html">Golf Carts</a>
+  <a href="rentals.html">Rentals</a>
+  <a href="service.html">Service</a>
+  <a href="parts.html">Parts</a>
+  <a href="about.html">About</a>
+  <div class="mobile-phones">
+    <a href="tel:4097841200"><i class="fa-solid fa-phone"></i> Beaumont: (409) 784-1200</a>
+    <a href="tel:9363121200"><i class="fa-solid fa-phone"></i> Lufkin: (936) 312-1200</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <a href="golf-carts.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Golf Carts</a>
+    <div class="hero-layout">
+      <div class="color-showcase">
+        <div class="color-showcase-img">
+          <img id="colorImg" src="img/golf-carts/e20fx/1.jpg" alt="Epic E20FX">
+        </div>
+        <div class="color-showcase-label" id="colorLabel">Metallic Forest Green</div>
+        <div class="color-swatches">
+          <div class="color-swatch active" style="background:#2D4A3E" onclick="pickColor('img/golf-carts/e20fx/1.jpg','Metallic Forest Green',this)"><span class="color-swatch-name">Forest Green</span></div>
+          <div class="color-swatch" style="background:#C2A882" onclick="pickColor('img/golf-carts/e20fx/2.jpg','Metallic Cashmere',this)"><span class="color-swatch-name">Cashmere</span></div>
+          <div class="color-swatch" style="background:#E8E8E8" onclick="pickColor('img/golf-carts/e20fx/3.jpg','Metallic White',this)"><span class="color-swatch-name">White</span></div>
+          <div class="color-swatch" style="background:#1A1A1A" onclick="pickColor('img/golf-carts/e20fx/4.jpg','Metallic Black',this)"><span class="color-swatch-name">Black</span></div>
+          <div class="color-swatch" style="background:#A8A9AD" onclick="pickColor('img/golf-carts/e20fx/5.jpg','Metallic Silver',this)"><span class="color-swatch-name">Silver</span></div>
+          <div class="color-swatch" style="background:#3D3D3D" onclick="pickColor('img/golf-carts/e20fx/6.jpg','Metallic Charcoal',this)"><span class="color-swatch-name">Charcoal</span></div>
+          <div class="color-swatch" style="background:#7B1E2C" onclick="pickColor('img/golf-carts/e20fx/7.jpg','Metallic Cherry',this)"><span class="color-swatch-name">Cherry</span></div>
+        </div>
+      </div>
+      <div class="hero-info">
+        <h1>EPIC E20FX</h1>
+        <p>Introducing the all-new EPIC E20FX – the pinnacle of golf cart innovation, built to elevate every ride. Designed with forward-facing, two-passenger seating, this premium cart offers unrivaled comfort and performance in seven eye-catching colors and three lift height options to suit your style.</p>
+        <p>Featuring durable 12″ premium wheels and street-ready tires, the EPIC E20FX handles any terrain with ease, no matter your chosen height. Packed with thoughtful features like expansive storage, a top-of-the-line marine-grade sound system, and sleek accent lighting, this cart is built for adventure, wherever it takes you.</p>
+        <p>Ready to transform your driving experience? Explore the EPIC E20FX today and discover the perfect blend of luxury and performance.</p>
+        <p>This EPIC E20FX is equipped with sand and seed bottles, a cooler, a sweater basket, and golf club holders. There is an available kit to convert it into a four-seater, which includes an extended roof and rear seat assembly.</p>
+        <a href="mailto:sales@texlaequipment.com?subject=Quote Request: Epic E20FX" class="btn-gold">REQUEST QUOTE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIFICATIONS -->
+<section class="specs-section">
+  <div class="container">
+    <h2 class="section-title light">SPECIFICATIONS</h2>
+    <div class="specs-grid">
+      <div class="spec-row"><span class="label">Passengers</span><span class="value">2 (convertible to 4 with extended roof kit)</span></div>
+      <div class="spec-row"><span class="label">Motor</span><span class="value">6.3kW AC</span></div>
+      <div class="spec-row"><span class="label">Battery</span><span class="value">51.2V/105Ah Eco Lithium</span></div>
+      <div class="spec-row"><span class="label">Battery Warranty</span><span class="value">Limited Lifetime</span></div>
+      <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+      <div class="spec-row"><span class="label">Charger</span><span class="value">48V Onboard w/ Charge Indicator</span></div>
+      <div class="spec-row"><span class="label">Wheels</span><span class="value">12" Premium</span></div>
+      <div class="spec-row"><span class="label">Dimensions</span><span class="value">119" &times; 56" &times; 57"</span></div>
+      <div class="spec-row"><span class="label">Ground Clearance</span><span class="value">6.5"</span></div>
+      <div class="spec-row"><span class="label">Weight</span><span class="value">1,215 lbs</span></div>
+      <div class="spec-row"><span class="label">Colors</span><span class="value">7 Metallic Options</span></div>
+      <div class="spec-row"><span class="label">Features</span><span class="value">Wireless Charging, Backup Camera, Marine-Grade Sound, Roof Lighting, Adjustable Lift Height</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>READY TO DRIVE AN ICON?</h2>
+    <p class="cta-sub">Contact us for pricing, availability, and to schedule a test drive.</p>
+    <div class="cta-phones">
+      <a href="tel:4097841200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (409) 784-1200</a>
+      <a href="tel:9363121200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (936) 312-1200</a>
+    </div>
+    <a href="mailto:sales@texlaequipment.com" class="btn-white">CONTACT TEXLA</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
+      </div>
+      <nav class="footer-nav">
+        <a href="equipment.html">Equipment</a>
+        <a href="golf-carts.html">Golf Carts</a>
+        <a href="rentals.html">Rentals</a>
+        <a href="service.html">Service</a>
+        <a href="parts.html">Parts</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/texlaequipment" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/texlaequipment/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
+        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('open');
+  icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+function pickColor(src, label, el) {
+  document.getElementById('colorImg').src = src;
+  document.getElementById('colorLabel').textContent = label;
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+}
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  header.style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,0.3)' : 'none';
+});
+</script>
+</body>
+</html>

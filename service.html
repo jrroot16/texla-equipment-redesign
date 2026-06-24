@@ -40,6 +40,14 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 500; color: #ccc; transition: all 0.15s; }
 .dropdown a:hover { color: var(--gold); background: rgba(200,149,46,0.08); }
+.dropdown .sub-group { position: relative; }
+.dropdown .sub-group > a::after { content: '›'; float: right; opacity: 0.5; }
+.dropdown .sub-dropdown {
+  position: absolute; left: 100%; top: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px; min-width: 200px; padding: 8px 0; opacity: 0; visibility: hidden;
+  transform: translateX(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.dropdown .sub-group:hover .sub-dropdown { opacity: 1; visibility: visible; transform: translateX(0); }
 .header-phones { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
 .header-phones a { color: var(--gold); transition: color 0.2s; }
 .header-phones a:hover { color: var(--gold-hover); }
@@ -174,10 +182,21 @@ button { cursor: pointer; font-family: inherit; border: none; }
     </a>
     <nav class="nav">
       <div class="nav-item">
-        <a href="inventory.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <a href="equipment.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
         <div class="dropdown">
-          <a href="inventory.html">New Equipment</a>
-          <a href="used.html">Used Equipment</a>
+          <div class="sub-group">
+            <a href="inventory.html">Forklifts</a>
+            <div class="sub-dropdown">
+              <a href="inventory.html">New Forklifts</a>
+              <a href="used.html">Used Forklifts</a>
+            </div>
+          </div>
+          <div class="sub-group">
+            <a href="golf-carts.html">Golf Carts</a>
+            <div class="sub-dropdown">
+              <a href="golf-carts.html">Icon Golf Carts</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-item"><a href="rentals.html">Rentals</a></div>
@@ -302,7 +321,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
         <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
       </div>
       <nav class="footer-nav">
-        <a href="inventory.html">Equipment</a>
+        <a href="equipment.html">Equipment</a>
         <a href="rentals.html">Rentals</a>
         <a href="service.html">Service</a>
         <a href="parts.html">Parts</a>

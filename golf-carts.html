@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icon Golf Carts | Texla Equipment Solutions</title>
+<meta name="description" content="Icon EV electric golf carts - street legal, premium features, Eco Lithium battery. Authorized dealer in Southeast Texas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background: #0d0d1a;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --dark: #1a1a2e;
+  --darker: #0d0d1a;
+  --gold: #E38929;
+  --gold-hover: #f09a3a;
+  --white: #ffffff;
+  --light-gray: #f4f4f4;
+  --mid-gray: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --section-dark: #12121f;
+  --card-bg: #1e1e32;
+  --max-width: 1280px;
+}
+
+/* ===== UTILITY ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--darker);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.logo span { color: var(--gold); }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav-item { position: relative; padding: 0 16px; height: 72px; display: flex; align-items: center; }
+.nav-item > a { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+.nav-item > a:hover { color: var(--gold); }
+.nav-item > a .fa-chevron-down { font-size: 9px; opacity: 0.6; }
+.nav-item.active > a { color: var(--gold); }
+.dropdown { position: absolute; top: 100%; left: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; min-width: 220px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 500; color: #ccc; transition: all 0.15s; }
+.dropdown a:hover { color: var(--gold); background: rgba(200,149,46,0.08); }
+.dropdown .sub-group { position: relative; }
+.dropdown .sub-group > a::after { content: '›'; float: right; opacity: 0.5; }
+.dropdown .sub-dropdown {
+  position: absolute; left: 100%; top: 0; background: var(--dark); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px; min-width: 200px; padding: 8px 0; opacity: 0; visibility: hidden;
+  transform: translateX(8px); transition: all 0.2s; box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.dropdown .sub-group:hover .sub-dropdown { opacity: 1; visibility: visible; transform: translateX(0); }
+.header-phones { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.header-phones a { color: var(--gold); transition: color 0.2s; }
+.header-phones a:hover { color: var(--gold-hover); }
+.header-phones .divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.mobile-toggle { display: none; background: none; color: #fff; font-size: 24px; padding: 8px; }
+
+/* ===== HERO ===== */
+.hero { position: relative; min-height: 70vh; display: flex; align-items: center; margin-top: 72px; background: linear-gradient(135deg, #0a0a18 0%, #151528 50%, #0d0d1a 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(200,149,46,0.06) 0%, transparent 60%), url('img/icon-golf-cart.jpg') center 55%/cover no-repeat; opacity: 0.5; }
+.hero-inner { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: 80px 24px; width: 100%; text-align: center; }
+.hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; letter-spacing: 1px; margin-bottom: 16px; }
+.hero .subtitle { font-size: 18px; color: #fff; line-height: 1.6; }
+
+/* ===== BRAND INTRO ===== */
+.brand-intro { padding: 80px 0; background: var(--section-dark); }
+.brand-intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.brand-intro-text h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 20px; }
+.brand-intro-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+.brand-intro-img { border-radius: 10px; overflow: hidden; }
+.brand-intro-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ===== FEATURES ===== */
+.features { padding: 80px 0; background: var(--dark); }
+.section-title { font-size: 36px; font-weight: 900; letter-spacing: 2px; margin-bottom: 50px; text-align: center; }
+.section-title.light { color: #fff; }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.feature-card { background: var(--card-bg); border-radius: 10px; padding: 36px 28px; text-align: center; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-4px); }
+.feature-icon { font-size: 36px; color: var(--gold); margin-bottom: 20px; }
+.feature-card h3 { font-size: 14px; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
+.feature-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ===== LINEUP ===== */
+.lineup { padding: 80px 0; background: var(--section-dark); }
+.lineup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.lineup-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+a.lineup-card-link { text-decoration: none; color: inherit; display: block; }
+.lineup-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+.lineup-card-img { height: 260px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 12px; }
+.lineup-card-img img { width: 100%; height: 100%; object-fit: contain; }
+.lineup-card-body { padding: 24px 20px; }
+.lineup-card-body .series-badge { display: inline-block; padding: 4px 10px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 3px; margin-bottom: 12px; background: rgba(34,197,94,0.15); color: #4ade80; }
+.lineup-card-body h3 { font-size: 16px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+.lineup-card-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.lineup-card-body .btn-gold-sm {
+  display: inline-flex; align-items: center; gap: 6px; background: var(--gold); color: #fff;
+  padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s;
+}
+.lineup-card-body .btn-gold-sm:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.lineup-card-body .specs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.lineup-card-body .spec-row { display: flex; justify-content: space-between; font-size: 13px; }
+.lineup-card-body .spec-row .label { color: var(--text-muted); }
+.lineup-card-body .spec-row .value { font-weight: 600; }
+
+/* ===== WARRANTY ===== */
+.warranty-section { padding: 80px 0; background: var(--dark); }
+.warranty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 800px; margin: 0 auto; }
+.warranty-card { background: var(--card-bg); border-radius: 10px; padding: 36px 32px; border: 1px solid rgba(255,255,255,0.06); }
+.warranty-card .badge { display: inline-block; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 3px; margin-bottom: 16px; }
+.warranty-card .badge.standard { background: rgba(200,149,46,0.15); color: var(--gold); }
+.warranty-card .badge.battery { background: rgba(34,197,94,0.15); color: #4ade80; }
+.warranty-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.warranty-card .coverage { font-size: 28px; font-weight: 900; color: var(--gold); margin-bottom: 12px; }
+.warranty-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+/* ===== CTA ===== */
+.cta { padding: 64px 0; background: linear-gradient(135deg, var(--gold) 0%, #a67a20 100%); text-align: center; }
+.cta h2 { font-size: 32px; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+.cta .cta-sub { font-size: 16px; opacity: 0.9; margin-bottom: 28px; }
+.cta-phones { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.cta-phone-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); color: #fff; padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 4px; transition: background 0.2s; }
+.cta-phone-btn:hover { background: rgba(255,255,255,0.25); }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--dark); padding: 14px 36px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+.btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--darker); padding: 48px 0 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 20px; }
+.footer-nav { display: flex; gap: 28px; }
+.footer-nav a { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--gold); }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #888; font-size: 16px; transition: all 0.2s; }
+.footer-social a:hover { background: var(--gold); color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; color: #555; font-size: 12px; flex-wrap: wrap; gap: 12px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #555; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--gold); }
+
+/* ===== MOBILE ===== */
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 24px; overflow-y: auto; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: 14px 0; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #ccc; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-phones { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu .mobile-phones a { color: var(--gold); border: none; font-size: 16px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nav, .header-phones { display: none; }
+  .mobile-toggle { display: block; }
+  .hero h1 { font-size: 36px; }
+  .brand-intro-inner { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .lineup-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .hero .subtitle { font-size: 16px; }
+  .features-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .lineup-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .warranty-grid { grid-template-columns: 1fr; }
+  .cta h2 { font-size: 24px; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 50px; filter: brightness(0) invert(1);">
+    </a>
+    <nav class="nav">
+      <div class="nav-item active">
+        <a href="equipment.html">Equipment <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <div class="sub-group">
+            <a href="inventory.html">Forklifts</a>
+            <div class="sub-dropdown">
+              <a href="inventory.html">New Forklifts</a>
+              <a href="used.html">Used Forklifts</a>
+            </div>
+          </div>
+          <div class="sub-group">
+            <a href="golf-carts.html">Golf Carts</a>
+            <div class="sub-dropdown">
+              <a href="golf-carts.html">Icon Golf Carts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="rentals.html">Rentals</a></div>
+      <div class="nav-item"><a href="service.html">Service</a></div>
+      <div class="nav-item"><a href="parts.html">Parts</a></div>
+      <div class="nav-item"><a href="about.html">About</a></div>
+    </nav>
+    <div class="header-phones">
+      <span>BEAUMONT</span> <a href="tel:4097841200">(409) 784-1200</a>
+      <div class="divider"></div>
+      <span>LUFKIN</span> <a href="tel:9363121200">(936) 312-1200</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobile()" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="inventory.html">Forklifts</a>
+  <a href="golf-carts.html">Golf Carts</a>
+  <a href="rentals.html">Rentals</a>
+  <a href="service.html">Service</a>
+  <a href="parts.html">Parts</a>
+  <a href="about.html">About</a>
+  <div class="mobile-phones">
+    <a href="tel:4097841200"><i class="fa-solid fa-phone"></i> Beaumont: (409) 784-1200</a>
+    <a href="tel:9363121200"><i class="fa-solid fa-phone"></i> Lufkin: (936) 312-1200</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>ICON GOLF CARTS</h1>
+    <p class="subtitle">Street-Legal Electric Golf Carts &mdash; Now Available at Texla Equipment</p>
+  </div>
+</section>
+
+<!-- BRAND INTRO -->
+<section class="brand-intro">
+  <div class="container">
+    <div class="brand-intro-inner">
+      <div class="brand-intro-text">
+        <h2>BE AN ICON. DRIVE AN ICON.</h2>
+        <p>Icon EV builds premium electric golf carts designed for the streets, the course, and everywhere in between. With standard features that other brands charge extra for, every Icon comes loaded and ready to go.</p>
+        <p>As an authorized Icon EV dealer, Texla Equipment Solutions brings the same commitment to service and support that Southeast Texas trusts us for &mdash; now with a whole new product line.</p>
+      </div>
+      <div class="brand-intro-img">
+        <img src="img/icon-x-gallery1.jpg" alt="Icon Golf Cart">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ICON X SERIES -->
+<section class="lineup">
+  <div class="container">
+    <h2 class="section-title light">ICON X SERIES</h2>
+    <p style="text-align:center; color: var(--text-muted); margin: -30px 0 40px; font-size: 16px;">The flagship. 10" multimedia display, CarPlay, soundbar, backup camera &mdash; dealer-adjustable ride height.</p>
+    <div class="lineup-grid">
+
+      <a href="icon-i20x.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #1a2520, #0f1815);">
+          <img src="img/icon-golf-cart.jpg" alt="Icon i20X">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge">NEW</span>
+          <h3>ICON i20X</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">2</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">48V 5kW 3-Phase</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">97.8" × 47.2" × 75.3"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">4.3"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,150 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">7 Metallic Options</span></div>
+          </div>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+      <a href="icon-i40x.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #1a1a25, #0f0f18);">
+          <img src="img/icon-i60l-blue.jpg" alt="Icon i40X">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge">NEW</span>
+          <h3>ICON i40X</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">4</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">48V 5kW 3-Phase</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">114" × 47.2" × 75.3"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">6.6"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,300 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">7 Metallic Options</span></div>
+          </div>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+      <a href="icon-i60lx.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #25201a, #18140f);">
+          <img src="img/icon-i60l-black.jpg" alt="Icon i60LX">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge">NEW</span>
+          <h3>ICON i60LX</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">6</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">48V 5kW 3-Phase</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">147.4" × 51.6" × 79.9"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">6.6"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,560 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">7 Metallic Options</span></div>
+          </div>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+    </div>
+  </div>
+</section>
+
+<!-- EPIC FX SERIES -->
+<section class="lineup" style="background: var(--dark);">
+  <div class="container">
+    <h2 class="section-title light">EPIC FX SERIES</h2>
+    <p style="text-align:center; color: var(--text-muted); margin: -30px 0 40px; font-size: 16px;">Luxury redefined. 6.3kW motor, marine-grade sound, wireless charging, backup camera &mdash; lifted suspension standard.</p>
+    <div class="lineup-grid">
+
+      <a href="epic-e20fx.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #251a1a, #180f0f);">
+          <img src="img/icon-epic-gallery.jpg" alt="Epic E20FX">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge" style="background: rgba(200,149,46,0.15); color: var(--gold);">LUXURY</span>
+          <h3>EPIC E20FX</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">2</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">6.3kW AC</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51.2V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Wheels</span><span class="value">12" Premium</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">119" × 56" × 57"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">6.5"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,215 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">7 Metallic Options</span></div>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0;">Wireless charging, backup camera, marine sound, roof lighting, convertible to 4-seat</p>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+      <a href="epic-e40fx.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #1a2535, #0f1822);">
+          <img src="img/icon-x-gallery2.jpg" alt="Epic E40FX">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge" style="background: rgba(200,149,46,0.15); color: var(--gold);">LUXURY</span>
+          <h3>EPIC E40FX</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">4</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">6.3kW AC</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Wheels</span><span class="value">14" Premium</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">119" × 56" × 57"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">6.5"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,215 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">6 Metallic Options</span></div>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0;">Marine-grade sound, accent lighting, lifted suspension standard, expansive storage</p>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+      <a href="epic-e60fx.html" class="lineup-card-link"><div class="lineup-card">
+        <div class="lineup-card-img" style="background: linear-gradient(135deg, #1a2520, #0f1815);">
+          <img src="img/icon-i60l-white.jpg" alt="Epic E60FX">
+        </div>
+        <div class="lineup-card-body">
+          <span class="series-badge" style="background: rgba(200,149,46,0.15); color: var(--gold);">LUXURY</span>
+          <h3>EPIC E60FX</h3>
+          <div class="specs">
+            <div class="spec-row"><span class="label">Passengers</span><span class="value">6</span></div>
+            <div class="spec-row"><span class="label">Motor</span><span class="value">6.3kW AC</span></div>
+            <div class="spec-row"><span class="label">Battery</span><span class="value">51.2V/105Ah Eco Lithium</span></div>
+            <div class="spec-row"><span class="label">Controller</span><span class="value">450A</span></div>
+            <div class="spec-row"><span class="label">Wheels</span><span class="value">14" Premium</span></div>
+            <div class="spec-row"><span class="label">Dimensions</span><span class="value">119" × 56" × 57"</span></div>
+            <div class="spec-row"><span class="label">Clearance</span><span class="value">6.5"</span></div>
+            <div class="spec-row"><span class="label">Weight</span><span class="value">1,215 lbs</span></div>
+            <div class="spec-row"><span class="label">Colors</span><span class="value">6 Metallic Options</span></div>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 12px 0;">Wireless charging, backup camera, marine sound, foldable rear bench, lit trim</p>
+          <span class="btn-gold-sm">VIEW DETAILS <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div></a>
+
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY -->
+<section class="warranty-section">
+  <div class="container">
+    <h2 class="section-title light">WARRANTY COVERAGE</h2>
+    <div class="warranty-grid">
+      <div class="warranty-card">
+        <span class="badge standard">MANUFACTURER</span>
+        <h3>Limited Warranty</h3>
+        <p class="coverage">3 Years</p>
+        <p>Comprehensive manufacturer warranty on all new Icon EV golf carts (2023+ models). Covers parts and manufacturing defects.</p>
+      </div>
+      <div class="warranty-card">
+        <span class="badge battery">BATTERY</span>
+        <h3>Eco Lithium Battery</h3>
+        <p class="coverage">8&ndash;10 Years</p>
+        <p>Industry-leading battery warranty. Eco Lithium batteries are maintenance-free with no watering, no acid, and fast charging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>READY TO DRIVE AN ICON?</h2>
+    <p class="cta-sub">Contact us for pricing, availability, and to schedule a test drive.</p>
+    <div class="cta-phones">
+      <a href="tel:4097841200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (409) 784-1200</a>
+      <a href="tel:9363121200" class="cta-phone-btn"><i class="fa-solid fa-phone"></i> (936) 312-1200</a>
+    </div>
+    <a href="mailto:sales@texlaequipment.com" class="btn-white">CONTACT TEXLA</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="img/logo_primary.png" alt="Texla Equipment" style="max-height: 45px; filter: brightness(0) invert(1);">
+      </div>
+      <nav class="footer-nav">
+        <a href="equipment.html">Equipment</a>
+        <a href="golf-carts.html">Golf Carts</a>
+        <a href="rentals.html">Rentals</a>
+        <a href="service.html">Service</a>
+        <a href="parts.html">Parts</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/texlaequipment" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/texlaequipment/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
+        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('open');
+  icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  header.style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,0.3)' : 'none';
+});
+</script>
+</body>
+</html>
