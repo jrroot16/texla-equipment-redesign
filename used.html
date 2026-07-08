@@ -78,7 +78,11 @@ button { cursor: pointer; font-family: inherit; border: none; }
 /* USED EQUIPMENT CARDS */
 .used-section { padding: 60px 0 80px; background: var(--section-dark); }
 .used-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.used-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.used-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+.used-card.sold { opacity: 0.6; pointer-events: none; }
+.used-card.sold .sold-banner { position: absolute; top: 20px; right: -35px; background: #c0392b; color: #fff; font-weight: 800; font-size: 14px; letter-spacing: 2px; padding: 6px 40px; transform: rotate(45deg); z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.used-card.sold .price { text-decoration: line-through; opacity: 0.5; }
+.used-card.sold .btn-gold { background: #555; cursor: default; }
 .used-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
 .used-card-img { height: 240px; display: flex; align-items: center; justify-content: center; font-size: 64px; color: rgba(200,149,46,0.2); }
 .used-card-body { padding: 28px 24px; }
@@ -242,7 +246,8 @@ button { cursor: pointer; font-family: inherit; border: none; }
   <div class="container">
     <div class="used-grid">
 
-      <div class="used-card">
+      <div class="used-card sold">
+        <span class="sold-banner">SOLD</span>
         <div class="used-card-img" style="background: #0f1822;">
           <img src="img/products/used/10116-1.jpg" alt="2012 Hyster H90FT" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
@@ -257,7 +262,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
             <div class="spec-item"><i class="fa-solid fa-arrows-up-down"></i> Three-stage mast, 48" forks</div>
             <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> Max speed: 12.8 mph</div>
           </div>
-          <a href="mailto:sales@texlaequipment.com?subject=Used Equipment Inquiry: 2012 Hyster H90FT" class="btn-gold">REQUEST INFO</a>
+          <span class="btn-gold">SOLD</span>
         </div>
       </div>
 
@@ -332,8 +337,8 @@ button { cursor: pointer; font-family: inherit; border: none; }
     <div class="footer-bottom">
       <span>&copy; 2024 Texla Equipment Solutions. All Rights Reserved.</span>
       <div class="footer-legal">
-        <a href="https://texlaequipment.com/Home/Legal">Privacy Policy</a>
-        <a href="https://texlaequipment.com/Home/Legal">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
       </div>
     </div>
   </div>
